@@ -13,5 +13,5 @@ class Service(models.Model):
         verbose_name_plural = "Servicios"
         ordering = ['-created']
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.title

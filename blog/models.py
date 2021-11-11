@@ -28,5 +28,11 @@ class Post(models.Model):
         verbose_name = 'Posteo'
         verbose_name_plural = 'Posteos'
 
+
+    #class Meta:
+        #verbose_name = "Post"
+        #verbose_name_plural = "Post"
+        #ordering = ['-created']
+
     def __str__(self) -> str:
         return self.title

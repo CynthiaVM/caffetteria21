@@ -48,14 +48,15 @@ ROOT_URLCONF = 'cafeteria.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
+        'DIRS': [], #para setiar manualmente las templates
+        'APP_DIRS': True, #va a buscar templates al directorio de apps
+        'OPTIONS': { #procesadores de contexto
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "social.processor.context_dict" #agregamos despues de processor
             ],
         },
     },

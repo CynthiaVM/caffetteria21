@@ -5,8 +5,8 @@
 {% block title %}Blog{% endblock %}
 
 {% block content %}
-{% for post in posteos %} 
-{{ posteos }}
+  {% for post in posteos %} 
+
   <section class="page-section cta">
     <div class="container">
       <div class="row">
@@ -21,7 +21,11 @@
             </p>
             <p class="mb-0 mbt">{{post.content|linebreaks}}</p>
             <p class="mb-0 mbt">
-              <span class="section-heading-under">Publicado por <em><b> {{post.author}} </b></em> en <em> {{post.categories.all|join:" , "}}  <a</a></em></span>
+              <span class="section-heading-under">Publicado por <em><b> {{post.author}} </b></em> en
+              {{post.categories.all|join:" , "}} 
+              <a href="{% url 'category' category.id %}" class="link">{{category.name}}</a>{% if not forloop.last %},{% endif %}
+              {% endfor %}
+            </span>
             </p>
           </div>
         </div>

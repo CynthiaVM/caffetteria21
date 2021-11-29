@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'core',
     'services',
     'social.apps.SocialConfig',
+    "pages.apps.PagesConfig",
 ]
 
 MIDDLEWARE = [

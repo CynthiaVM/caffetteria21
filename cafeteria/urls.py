@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django.urls import path
-from django.urls.conf import include
+from django.urls import path, include
 from django.conf import settings
 
 urlpatterns = [
@@ -12,7 +11,9 @@ urlpatterns = [
     path('', include('core.urls') ),
     # PATH services
     path('services/',include('services.urls') ),
-]
+    # PATH pages
+    path('page/', include('pages.urls') ),
+    ]
 
 if settings.DEBUG:
     from django.conf.urls.static import static
